@@ -1,0 +1,65 @@
+{
+  "name": "bona-browser",
+  "productName": "BONA",
+  "version": "1.0.0",
+  "description": "BONA - a secure web browser. Bona means 'seeing' in Setswana.",
+  "main": "src/main.js",
+  "author": {
+    "name": "Gerald Thetjeng",
+    "email": "noreply@bona.local"
+  },
+  "homepage": "https://bona.local",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win nsis --x64",
+    "dist:linux": "electron-builder --linux AppImage deb --x64"
+  },
+  "build": {
+    "appId": "za.co.bona.browser",
+    "productName": "BONA",
+    "copyright": "Copyright \u00a9 2026 Gerald Thetjeng",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "build/icon.png",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico",
+      "executableName": "BONA"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "BONA",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "BONA-Setup-${version}.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icons",
+      "category": "Network;WebBrowser",
+      "executableName": "bona",
+      "maintainer": "Gerald Thetjeng <noreply@bona.local>",
+      "synopsis": "BONA - secure web browser",
+      "artifactName": "BONA-${version}-${arch}.${ext}"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  }
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0E7C86"/>
+      <stop offset="0.55" stop-color="#14506E"/>
+      <stop offset="1" stop-color="#1B2A4A"/>
+    </linearGradient>
+    <radialGradient id="iris" cx="0.42" cy="0.38" r="0.7">
+      <stop offset="0" stop-color="#FFD46B"/>
+      <stop offset="0.6" stop-color="#F2A71B"/>
+      <stop offset="1" stop-color="#C9780A"/>
+    </radialGradient>
+    <clipPath id="eyeClip">
+      <path d="M152 512 C 280 300, 744 300, 872 512 C 744 724, 280 724, 152 512 Z"/>
+    </clipPath>
+  </defs>
+  <!-- tile -->
+  <rect x="32" y="32" width="960" height="960" rx="216" fill="url(#bg)"/>
+  <rect x="32" y="32" width="960" height="960" rx="216" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="8"/>
+  <!-- eye white -->
+  <path d="M152 512 C 280 300, 744 300, 872 512 C 744 724, 280 724, 152 512 Z" fill="#F7FBFC"/>
+  <g clip-path="url(#eyeClip)">
+    <!-- iris = globe -->
+    <circle cx="512" cy="512" r="178" fill="url(#iris)"/>
+    <g fill="none" stroke="#1B2A4A" stroke-opacity="0.55" stroke-width="10">
+      <ellipse cx="512" cy="512" rx="78" ry="178"/>
+      <line x1="512" y1="334" x2="512" y2="690"/>
+      <path d="M352 440 Q512 470 672 440"/>
+      <path d="M352 584 Q512 554 672 584"/>
+    </g>
+    <circle cx="512" cy="512" r="178" fill="none" stroke="#1B2A4A" stroke-width="14"/>
+    <!-- pupil -->
+    <circle cx="512" cy="512" r="64" fill="#1B2A4A"/>
+    <circle cx="486" cy="486" r="22" fill="#ffffff" fill-opacity="0.9"/>
+  </g>
+  <!-- eye outline -->
+  <path d="M152 512 C 280 300, 744 300, 872 512 C 744 724, 280 724, 152 512 Z" fill="none" stroke="#1B2A4A" stroke-width="18" stroke-linejoin="round"/>
+  <!-- small shield check (security) -->
+  <g transform="translate(708 664)">
+    <path d="M0 -92 L78 -62 L78 6 C78 66 40 100 0 118 C-40 100 -78 66 -78 6 L-78 -62 Z" fill="#2BC48A" stroke="#F7FBFC" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M-34 8 L-8 34 L38 -18" fill="none" stroke="#F7FBFC" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

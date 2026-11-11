@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' https: http: data:; font-src 'self'">
+  <title>BONA</title>
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <header id="chrome">
+    <div id="tabstrip">
+      <img id="brand" src="logo.svg" alt="BONA" title="BONA — seeing">
+      <div id="tabs"></div>
+      <button id="newtab" class="icon" title="New tab (Ctrl+T)">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      </button>
+      <span id="privbadge" hidden>PRIVATE</span>
+    </div>
+    <div id="toolbar">
+      <button id="back" class="icon" title="Back (Alt+←)"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button id="forward" class="icon" title="Forward (Alt+→)"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      <button id="reload" class="icon" title="Reload (Ctrl+R)">
+        <svg id="ico-reload" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+        <svg id="ico-stop" viewBox="0 0 24 24" hidden><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <button id="home" class="icon" title="Home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg></button>
+      <form id="addressform" autocomplete="off">
+        <button type="button" id="lock" title="Site security"><span id="lockdot"></span><span id="locktext"></span></button>
+        <input id="address" spellcheck="false" placeholder="Search or enter address">
+      </form>
+      <button id="shield" class="icon" title="BONA Shield — security for this page">
+        <svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>
+        <span id="shieldcount" hidden>0</span>
+      </button>
+      <button id="dl" class="icon" title="Downloads"><svg viewBox="0 0 24 24"><path d="M12 4v11m-5-5l5 5 5-5M5 20h14"/></svg></button>
+      <button id="menu" class="icon" title="Menu & settings"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+
+  <aside id="panel" hidden>
+    <div class="panel-head"><h2 id="panel-title"></h2><button id="panel-close" class="icon" title="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <section id="p-shield" class="pane"></section>
+    <section id="p-downloads" class="pane"></section>
+    <section id="p-menu" class="pane"></section>
+  </aside>
+
+  <script src="ui.js"></script>
+</body>
+</html>

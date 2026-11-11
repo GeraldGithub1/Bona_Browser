@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>New Tab</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: "Segoe UI", system-ui, "Ubuntu", sans-serif; color: #1b2a4a;
+    background: radial-gradient(1200px 600px at 50% -10%, #d9f0f1 0%, #eef3f6 45%, #f6f8fa 100%); }
+  .logo { width: 112px; height: 112px; filter: drop-shadow(0 8px 18px rgba(20, 80, 110, .25)); }
+  h1 { margin: 14px 0 2px; font-size: 44px; letter-spacing: .28em; font-weight: 800; padding-left: .28em; }
+  .tag { color: #5d6b80; margin-bottom: 30px; font-size: 14px; }
+  form { width: min(620px, 88vw); display: flex; background: #fff; border: 1px solid #cfd8e0; border-radius: 28px; padding: 6px 6px 6px 22px;
+    box-shadow: 0 6px 24px rgba(27, 42, 74, .08); }
+  form:focus-within { border-color: #0e7c86; box-shadow: 0 0 0 4px rgba(14, 124, 134, .15); }
+  input { flex: 1; border: 0; outline: 0; font-size: 17px; background: transparent; color: #1b2a4a; }
+  button { border: 0; background: #0e7c86; color: #fff; border-radius: 22px; padding: 10px 22px; font-size: 15px; cursor: pointer; }
+  button:hover { background: #0b6870; }
+  .pills { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; justify-content: center; }
+  .pill { font-size: 12px; color: #14506e; background: rgba(14, 124, 134, .1); border-radius: 14px; padding: 5px 12px; }
+  .engine { margin-top: 12px; font-size: 12px; color: #5d6b80; }
+</style>
+</head>
+<body>
+  <img class="logo" src="logo.svg" alt="">
+  <h1>BONA</h1>
+  <div class="tag">Bona — <em>seeing</em>. Browse clearly, browse safely.</div>
+  <form id="f" method="get">
+    <input id="q" name="q" placeholder="Search the web or type an address" autofocus autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
+  <div class="engine" id="engine"></div>
+  <div class="pills">
+    <span class="pill">🛡 Trackers blocked</span>
+    <span class="pill">🔒 HTTPS-Only</span>
+    <span class="pill">🎣 Phishing guard</span>
+    <span class="pill">🧱 Sandboxed tabs</span>
+  </div>
+  <script src="home.js"></script>
+</body>
+</html>
